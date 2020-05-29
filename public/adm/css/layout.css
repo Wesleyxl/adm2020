@@ -1,0 +1,34 @@
+.sidebar .mt-2 .nav-item {
+    background-color: #343a40;
+    margin-bottom: 10px;
+}
+.sidebar .mt-2 ul .nav-item .nav, .sidebar .mt-2 ul .nav-item .nav li{
+    margin-left: 15px;
+}
+/*bem vindo nav message */
+.main-header .nav-item .wellcome-title {
+    margin-right: 10px;
+}
+/* end bem vindo nav message*/
+/* menu logout */
+.main-header {
+    height: 80px;
+}
+
+.main-header .menu-logout {
+    list-style: none;
+}
+/* end menu logout */
+/* notification menu */
+.main-header .notification {
+    padding-right: 50px;
+}
+@media (max-width: 450px) {
+    .main-header .notification {
+        padding-right: 0px;
+    }
+}
+/* end notification menu */
+.nav-sidebar .nav-link .ml-10 {
+    margin-left: 10px;
+}
