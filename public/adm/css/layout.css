@@ -32,3 +32,33 @@
 .nav-sidebar .nav-link .ml-10 {
     margin-left: 10px;
 }
+.navbar-expand .navbar-nav .dropdown-menu {
+    height: 272px;
+    overflow-y: scroll;
+    padding-bottom: 40px;
+}
+.dropdown-footer {
+    position: fixed;
+    top: 297px;
+    z-index: 1000;
+    width: 261px;
+    background-color: #fff;
+}
+.user-panel{
+    background-color: #fff;
+    padding-top: 15px;
+}
+.user-panel .image {
+    padding-left: 5px;
+}
+.user-panel img {
+    height: 100%;
+    width: 100%;
+}
+footer .logo-area {
+    width: 315px;
+    margin: 0 auto;
+}
+footer .logo-area img {
+    width: 100%;
+}

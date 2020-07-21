@@ -29,7 +29,6 @@ class HomeController extends Controller
         $newsContato = Contato::where('status', '=', 'Não lido')->get()->all();
 
         return view('home', array(
-            'newsContato' => $newsContato,
             'notiNews' => $this->notiNews,
             'notiContato' => $this->notiContato,
             

@@ -23,14 +23,9 @@ class HomeController extends Controller
         if ($atual === null) {
             $atual = Acompanhe::where('datePost', '<=', $this->today)->orderBy('order', 'asc')->get()->first();
         }
-        $segundario = Acompanhe::where('datePost', '<=', $this->today)->where('order', '=', null)->orderBy('id', 'desc')->skip(1)->take(2)->get()->first();
-        if ($segundario === null) {
-            $segundario = Acompanhe::where('datePost', '<=', $this->today)->orderBy('order', 'asc')->skip(1)->take(2)->get()->first();
-        }
         
         return view("pages/home/home", array(
-            'atula' => $atual,
-            'segundario' => $segundario
+            'atula' => $atual
         ));
     }
 
@@ -40,14 +35,9 @@ class HomeController extends Controller
         if ($atual === null) {
             $atual = Acompanhe::where('datePost', '<=', $this->today)->orderBy('order', 'asc')->get()->first();
         }
-        $segundario = Acompanhe::where('datePost', '<=', $this->today)->where('order', '=', null)->orderBy('id', 'desc')->skip(1)->take(2)->get()->first();
-        if ($segundario === null) {
-            $segundario = Acompanhe::where('datePost', '<=', $this->today)->orderBy('order', 'asc')->skip(1)->take(2)->get()->first();
-        }
 
         return view("pages/home/sucesso", array(
-            'atual' => $atual,
-            'segundario' => $segundario
+            'atual' => $atual
         ));
 
     }
@@ -56,7 +46,7 @@ class HomeController extends Controller
 
         $validator = Validator::make($request->all(), [
             'nome' => 'required|string',
-            'telefone' => 'required|string'
+            'whatsapp' => 'required|string'
         ]);
 
         if ($validator->fails()) {
@@ -65,7 +55,7 @@ class HomeController extends Controller
  
         $news = new News();
         $news['title'] = $request->input('nome');
-        $news['telephone'] = $request->input('numero');
+        $news['telephone'] = $request->input('whatsapp');
 
         if ($news->save()) {
             return redirect('/sucesso');

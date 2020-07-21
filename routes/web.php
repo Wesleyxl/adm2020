@@ -8,7 +8,7 @@
 
 // auth routes
 Auth::routes();
-Route::get('/adm/home', "Adm\HomeController@index");
+Route::get('/adm', "Adm\HomeController@index");
 
 // Acompanhe Routes
 Route::resource('/adm/acompanhe/', 'Adm\AcompanheController');
